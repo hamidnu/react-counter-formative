@@ -1,0 +1,259 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #182238;
+  background: #f4f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+/* Page layout */
+.page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 28px;
+}
+
+.page__header {
+  max-width: 620px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.page__header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.055em;
+}
+
+.page__intro {
+  margin: 12px 0 0;
+  color: #667085;
+  line-height: 1.6;
+}
+
+/* =====================================
+   BLOCK: counter
+===================================== */
+
+.counter {
+  width: min(100%, 420px);
+  padding: 30px;
+  border: 1px solid #e5e9f2;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 22px 60px rgba(32, 48, 92, 0.09);
+}
+
+/* Elements: card header */
+
+.counter__card-topline {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #667085;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.counter__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #26a879;
+  box-shadow: 0 0 0 4px #e8f7f0;
+}
+
+.counter__label {
+  color: #667085;
+}
+
+.counter__range-label {
+  margin-left: auto;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #f1f3fa;
+  color: #5369b1;
+  letter-spacing: 0.03em;
+}
+
+/* Elements: heading and description */
+
+.counter__heading {
+  margin: 25px 0 7px;
+  font-size: 1.45rem;
+  letter-spacing: -0.035em;
+}
+
+.counter__description {
+  margin: 0;
+  color: #778196;
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+/* Elements: number display */
+
+.counter__number-panel {
+  display: flex;
+  min-height: 150px;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 18px;
+  padding: 20px;
+  border: 1px solid #edf0f6;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #f8f9ff, #f2f5ff);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter__number {
+  color: #334b9b;
+  font-size: clamp(5rem, 19vw, 7rem);
+  font-weight: 750;
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+
+.counter__limit {
+  color: #9aa4b7;
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+/* Elements: progress bar */
+
+.counter__progress-track {
+  overflow: hidden;
+  height: 9px;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: #edf0f6;
+}
+
+.counter__progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #657bd0, #3c56ad);
+  transition: width 180ms ease;
+}
+
+/* Elements: action buttons */
+
+.counter__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.counter__button {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 13px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+/* Modifier: increment button */
+
+.counter__button--increment {
+  background: #3e56ad;
+}
+
+.counter__button--increment:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #304796;
+}
+
+/* Modifier: decrement button */
+
+.counter__button--decrement {
+  background: #3e56ad;
+}
+
+.counter__button--decrement:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #304796;
+}
+
+/* Button states */
+
+.counter__button:focus-visible {
+  outline: 3px solid #9aabf0;
+  outline-offset: 3px;
+}
+
+.counter__button:disabled {
+  background: #8b96bd;
+  cursor: not-allowed;
+}
+
+.counter__button > span {
+  font-size: 1.2rem;
+}
+
+/* Element: helper message */
+
+.counter__helper-text {
+  min-height: 22px;
+  margin: 14px 0 0;
+  color: #778196;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* =====================================
+   Page footer
+===================================== */
+
+.page__footer {
+  margin-top: 28px;
+  color: #98a1b1;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* Responsive design */
+
+@media (max-width: 420px) {
+  .counter {
+    padding: 23px;
+  }
+}
+
+/* Accessibility: reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
