@@ -1,5 +1,6 @@
 # React Counter
 View React Counter: https://teal-daifuku-14aa01.netlify.app/ 
+GitHub: https://github.com/hamidnu/react-counter-formative
 
 A small React application for the Advanced Software Engineering formative practical assignment. The counter starts at **0**, increases by one each time the user clicks the button, and stops at **10**.
 
